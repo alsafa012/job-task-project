@@ -25,7 +25,9 @@ const AllTask = () => {
      const { refetch, data: task = [] } = useQuery({
           queryKey: ["allTasks"],
           queryFn: async () => {
-               const res = await axios.get("https://job-task-server-pi.vercel.app/allTasks");
+               const res = await axios.get(
+                    "https://job-task-server-pi.vercel.app/allTasks"
+               );
                return res.data;
           },
      });
@@ -49,18 +51,18 @@ const AllTask = () => {
                confirmButtonText: "Yes, Remove this Task!",
           }).then((result) => {
                if (result.isConfirmed) {
-                    axios.delete(`https://job-task-server-pi.vercel.app/allTasks/${id}`).then(
-                         (res) => {
-                              if (res.data.deletedCount > 0) {
-                                   Swal.fire({
-                                        title: "Deleted!",
-                                        text: "Task has been removed successfully.",
-                                        icon: "success",
-                                   });
-                              }
-                              refetch();
+                    axios.delete(
+                         `https://job-task-server-pi.vercel.app/allTasks/${id}`
+                    ).then((res) => {
+                         if (res.data.deletedCount > 0) {
+                              Swal.fire({
+                                   title: "Deleted!",
+                                   text: "Task has been removed successfully.",
+                                   icon: "success",
+                              });
                          }
-                    );
+                         refetch();
+                    });
                }
           });
      };
@@ -361,6 +363,9 @@ const AllTask = () => {
                                                       <IoMdDoneAll />
                                                  </button> */}
                                                             <Link
+                                                                 state={
+                                                                      location?.pathname
+                                                                 }
                                                                  to={`/dashboard/updateTask/${task._id}`}
                                                             >
                                                                  <button
