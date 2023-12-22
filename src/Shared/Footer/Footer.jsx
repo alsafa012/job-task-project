@@ -1,6 +1,4 @@
 import { Link } from "react-router-dom";
-import github from "../../assets/social/github-go8nPZP0.png";
-import facebook from "../../assets/social/facebook-xbeWuVz3.png";
 import { FaFacebook, FaGithub } from "react-icons/fa";
 
 const Footer = () => {

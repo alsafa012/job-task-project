@@ -1,11 +1,10 @@
-import React from 'react';
 
-const AllPersonsection = () => {
+const AllPersonSection = () => {
      return (
           <div>
-               AllPersonsection
+               AllPersonSection
           </div>
      );
 };
 
-export default AllPersonsection;
+export default AllPersonSection;

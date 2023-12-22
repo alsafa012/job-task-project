@@ -1,8 +1,5 @@
 import { Link } from "react-router-dom";
-import errorImg from "../../assets/ErrorPage/error-404.webp" 
-// import Container from "../../Components/Container/Container";
-// import SectionBanner from "../../Components/SectionBanner/SectionBanner";
-// import WebsiteTitle from "../../Components/WebsiteTitle/WebsiteTitle";
+import errorImg from "../../assets/ErrorPage/error-404.webp"
 const ErrorPage = () => {
      return (
           <div className="light-bg">
@@ -10,7 +7,7 @@ const ErrorPage = () => {
                {/* <Container> */}
                     <div className="md:flex gap-5 justify-center p-10 md:w-[90%] lg:w-[80%] mx-auto">
                          <div className="flex-1">
-                              <div className="flex flex-col items-start">
+                              <div className="flex flex-col items-start text-white">
                                    <h1 className="text-4xl md:text-6xl lg:text-8xl font-bold">
                                         Sorry!
                                    </h1>
