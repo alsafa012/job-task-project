@@ -28,7 +28,7 @@ const SocialLogin = () => {
                          ),
                          role:'user'
                     };
-                    axios.post("http://localhost:5000/users", userInfo)
+                    axios.post("https://job-task-server-pi.vercel.app/users", userInfo)
                     .then((res) => {
                          console.log(res.data);
                     });

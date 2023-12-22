@@ -87,7 +87,7 @@ const RegistrationPage = () => {
                          ),
                          role: "user",
                     };
-                    axios.post("http://localhost:5000/users", userInfo).then(
+                    axios.post("https://job-task-server-pi.vercel.app/users", userInfo).then(
                          (res) => {
                               if (res.data.insertedId) {
                                    console.log(

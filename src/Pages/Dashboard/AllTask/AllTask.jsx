@@ -25,7 +25,7 @@ const AllTask = () => {
      const { refetch, data: task = [] } = useQuery({
           queryKey: ["allTasks"],
           queryFn: async () => {
-               const res = await axios.get("http://localhost:5000/allTasks");
+               const res = await axios.get("https://job-task-server-pi.vercel.app/allTasks");
                return res.data;
           },
      });
@@ -49,7 +49,7 @@ const AllTask = () => {
                confirmButtonText: "Yes, Remove this Task!",
           }).then((result) => {
                if (result.isConfirmed) {
-                    axios.delete(`http://localhost:5000/allTasks/${id}`).then(
+                    axios.delete(`https://job-task-server-pi.vercel.app/allTasks/${id}`).then(
                          (res) => {
                               if (res.data.deletedCount > 0) {
                                    Swal.fire({
@@ -82,7 +82,7 @@ const AllTask = () => {
                     const updateOnGoing = { status: status };
                     console.log(updateOnGoing);
                     axios.put(
-                         `http://localhost:5000/allTasks/${id}`,
+                         `https://job-task-server-pi.vercel.app/allTasks/${id}`,
                          updateOnGoing
                     ).then((res) => {
                          if (res.data.modifiedCount > 0)
@@ -116,7 +116,7 @@ const AllTask = () => {
                     const updateDone = { status: status };
                     console.log(updateDone);
                     axios.put(
-                         `http://localhost:5000/allTasks/${id}`,
+                         `https://job-task-server-pi.vercel.app/allTasks/${id}`,
                          updateDone
                     ).then((res) => {
                          if (res.data.modifiedCount > 0)

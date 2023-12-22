@@ -46,7 +46,7 @@ const MyCreatedRouter = createBrowserRouter([
                               <AllTask></AllTask>
                          </PrivateRoute>
                     ),
-                    loader: () => fetch("http://localhost:5000/allTasks"),
+                    loader: () => fetch("https://job-task-server-pi.vercel.app/allTasks"),
                },
                {
                     path: "/dashboard/updateTask/:id",
@@ -55,7 +55,7 @@ const MyCreatedRouter = createBrowserRouter([
                               <UpdateTask></UpdateTask>
                          </PrivateRoute>
                     ),
-                    loader: ({params}) => fetch(`http://localhost:5000/allTasks/${params.id}`),
+                    loader: ({params}) => fetch(`https://job-task-server-pi.vercel.app/allTasks/${params.id}`),
                },
                {
                     path: "/dashboard/userProfile",
@@ -64,7 +64,7 @@ const MyCreatedRouter = createBrowserRouter([
                               <UserProfile></UserProfile>
                          </PrivateRoute>
                     ),
-                    loader: () => fetch("http://localhost:5000/users"),
+                    loader: () => fetch("https://job-task-server-pi.vercel.app/users"),
                },
                {
                     path: "/dashboard/addTask",

@@ -23,7 +23,7 @@ const AddTask = () => {
           };
           console.log(createATask);
           const contextRes = await axios.post(
-               "http://localhost:5000/allTasks",
+               "https://job-task-server-pi.vercel.app/allTasks",
                createATask
           );
           console.log(contextRes.data);

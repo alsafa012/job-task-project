@@ -26,7 +26,7 @@ const UpdateTask = () => {
                description: data.description,
           };
           console.log("input",allMyTask);
-          fetch(`http://localhost:5000/allTasks/${_id}`, {
+          fetch(`https://job-task-server-pi.vercel.app/allTasks/${_id}`, {
                method: "PATCH",
                headers: {
                     "content-type": "application/json",
