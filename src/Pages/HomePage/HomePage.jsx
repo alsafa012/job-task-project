@@ -5,7 +5,7 @@ import WebsiteTitle from "../../Shared/WebsiteTitle/WebsiteTitle";
 import AllPersonSection from "./AllPersonsection";
 const HomePage = () => {
      return (
-          <div>
+          <div className="bg-[#2a2c39]">
                <WebsiteTitle title={"Home Page"}></WebsiteTitle>
                <Navbar></Navbar>
                <Banner></Banner>
