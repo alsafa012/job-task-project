@@ -23,3 +23,10 @@ body {
      border: 2px solid #2a2c39;
      color: aliceblue;
 }
+.login-btn{
+     background-color: #252734;
+     transition: background-color 2s ease, border-color 2s ease-out;
+     /* border-radius: 3rem; */
+     border: 2px solid #2a2c39;
+     color: aliceblue; 
+}

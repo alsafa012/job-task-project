@@ -7,7 +7,7 @@ import WebsiteTitle from "../../Shared/WebsiteTitle/WebsiteTitle";
 import axios from "axios";
 import moment from "moment";
 import SocialLogin from "../../Components/SocialLogins/SocialLogin";
-
+import { MdNavigateBefore } from "react-icons/md";
 const RegistrationPage = () => {
      const [showPassword, setShowPassword] = useState(false);
      const [errorMessage, setErrorMessage] = useState(false);
@@ -87,21 +87,22 @@ const RegistrationPage = () => {
                          ),
                          role: "user",
                     };
-                    axios.post("https://job-task-server-pi.vercel.app/users", userInfo).then(
-                         (res) => {
-                              if (res.data.insertedId) {
-                                   console.log(
-                                        "user added successfully in the database"
-                                   );
-                                   Swal.fire({
-                                        title: "Good job!",
-                                        text: "Sign up successfully!",
-                                        icon: "success",
-                                   });
-                                   // navigate(from, { replace: true });
-                              }
+                    axios.post(
+                         "https://job-task-server-pi.vercel.app/users",
+                         userInfo
+                    ).then((res) => {
+                         if (res.data.insertedId) {
+                              console.log(
+                                   "user added successfully in the database"
+                              );
+                              Swal.fire({
+                                   title: "Good job!",
+                                   text: "Sign up successfully!",
+                                   icon: "success",
+                              });
+                              // navigate(from, { replace: true });
                          }
-                    );
+                    });
                     Swal.fire(
                          "Good job!",
                          "User created successfully",
@@ -120,10 +121,16 @@ const RegistrationPage = () => {
      return (
           <div className="dark-bg min-h-screen py-5 md:py-10">
                <WebsiteTitle title={"SignUp Page"}></WebsiteTitle>
-               <div className="light-bg border text-white w-4/5 md:w-1/3 mx-auto p-5 rounded-xl">
+               <div className="relative light-bg border text-white w-4/5 md:w-1/2 lg:w-1/3 mx-auto p-5 rounded-xl">
                     <p className="text-3xl font-bold mb-6 text-center mt-5">
                          Sign Up Page
                     </p>
+                    <Link to="/">
+                         <button className="btn login-btn absolute top-0 left-0">
+                              <MdNavigateBefore />
+                              home
+                         </button>
+                    </Link>
                     <form onSubmit={handleRegister} className="text-white">
                          <div className="form-control">
                               <label className="label">

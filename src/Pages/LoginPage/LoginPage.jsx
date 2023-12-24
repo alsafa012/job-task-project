@@ -5,9 +5,9 @@ import Swal from "sweetalert2";
 import { AuthContext } from "../../Provider/AuthProvider";
 import WebsiteTitle from "../../Shared/WebsiteTitle/WebsiteTitle";
 import SocialLogin from "../../Components/SocialLogins/SocialLogin";
-// import { AuthContext } from "../../Provider/AuthProvider";
-// import PageTitle from "../../Components/PageTitle/PageTitle";
-
+import { MdNavigateBefore } from "react-icons/md";
+// import { PiNavigationArrowDuotone } from "react-icons/pi";
+// <PiNavigationArrowDuotone />
 const LoginPage = () => {
      // const from = location?.state?.from?.pathname || "/";
      const [showPassword, setShowPassword] = useState(false);
@@ -81,7 +81,6 @@ const LoginPage = () => {
                     );
                     navigate(from, { replace: true });
 
-
                     e.target.email.value = "";
                     e.target.password.value = "";
                })
@@ -93,17 +92,20 @@ const LoginPage = () => {
                });
      };
      return (
-          <div className="dark-bg min-h-screen">
+          <div className="dark-bg min-h-screen py-5 md:py-10">
                <WebsiteTitle title={"Login Page"}></WebsiteTitle>
                {/* <PageTitle title="Login"></PageTitle> */}
-               <div className="light-bg border text-white w-4/5 md:w-1/3 mx-auto p-5 rounded-b-xl">
+               <div className="relative light-bg border text-white w-4/5 md:w-1/2 lg:w-1/3 mx-auto p-5 rounded-xl">
                     <p className="text-3xl font-bold mb-6 text-center mt-5">
                          Login Here..
                     </p>
-                    <form
-                         onSubmit={handleLogin}
-                         className="text-white"
-                    >
+                    <Link to="/">
+                         <button className="btn login-btn absolute top-0 left-0">
+                              <MdNavigateBefore />
+                              home
+                         </button>
+                    </Link>
+                    <form onSubmit={handleLogin} className="text-white">
                          <div className="form-control">
                               <label className="label">
                                    <span className="">Email</span>
@@ -128,10 +130,7 @@ const LoginPage = () => {
                                    required
                               />
                               <label className="label mt-3">
-                                   <a
-                                        href="#"
-                                        className="-alt link link-hover"
-                                   >
+                                   <a href="#" className="-alt link link-hover">
                                         Forgot password?
                                    </a>
                               </label>
