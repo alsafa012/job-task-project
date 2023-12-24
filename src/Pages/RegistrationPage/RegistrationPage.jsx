@@ -128,7 +128,7 @@ const RegistrationPage = () => {
                     <Link to="/">
                          <button className="btn login-btn absolute top-0 left-0">
                               <MdNavigateBefore />
-                              home
+                              Home
                          </button>
                     </Link>
                     <form onSubmit={handleRegister} className="text-white">

@@ -102,7 +102,7 @@ const LoginPage = () => {
                     <Link to="/">
                          <button className="btn login-btn absolute top-0 left-0">
                               <MdNavigateBefore />
-                              home
+                              Home
                          </button>
                     </Link>
                     <form onSubmit={handleLogin} className="text-white">
