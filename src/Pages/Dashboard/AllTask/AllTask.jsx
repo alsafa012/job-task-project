@@ -132,20 +132,9 @@ const AllTask = () => {
                }
           });
      };
-
-     // update task
-     const handleUpdateTask = (id) => {
-          console.log(id);
-     };
      return (
           <div>
                <WebsiteTitle title={"All Task"}></WebsiteTitle>
-               {/* <h1 className="my-5 text-2xl md:text-4xl font-bold text-center text-white">
-                    All Task
-               </h1> */}
-               {/* <h1 className="my-5 text-2xl md:text-4xl font-bold text-center text-white">
-                    {allTask.length}
-               </h1> */}
                {allTask.length === 0 ? (
                     <div className="text-center mt-10">
                          <h1 className="my-5 text-2xl md:text-4xl font-bold text-center text-white">
@@ -162,9 +151,11 @@ const AllTask = () => {
                          <h1 className="my-5 text-2xl md:text-4xl font-bold text-center text-white">
                               All Task
                          </h1>
-                         <div className="grid md:grid-cols-3 gap-5 max-h-[75vh] overflow-y-auto text-white">
+                         <div className="grid md:grid-cols-3 gap-5 max-h-[75vh] overflow-auto text-white">
+                         {/* <div className="grid md:grid-cols-3 gap-5 max-h-[75vh] overflow-hidden text-white"> over flow done for single list*/}
                               {/* 1st */}
                               <div className="p-2 border rounded-xl dark-bg">
+                              {/* <div className="p-2 border rounded-xl dark-bg max-h-[75vh] overflow-y-auto"> over flow done for single list */} 
                                    <div className="text-center font-bold text-xl flex gap-2 justify-center">
                                         <p>Todo</p>{" "}
                                         <p>
@@ -240,30 +231,12 @@ const AllTask = () => {
                                                                  to={`/dashboard/updateTask/${task._id}`}
                                                             >
                                                                  <button
-                                                                      onClick={() =>
-                                                                           handleUpdateTask(
-                                                                                task._id
-                                                                           )
-                                                                      }
                                                                       className="primary-btn p-2 bg-white"
                                                                       title="click for Update make task"
                                                                  >
                                                                       <MdOutlineBrowserUpdated />
                                                                  </button>
                                                             </Link>
-                                                            {/* <button onClick={()=>handleUpdateTask(task._id)} className="bth">update</button> */}
-                                                            {/* <button
-                                                           onClick={() =>
-                                                                handleTaskOngoing(
-                                                                     task._id,
-                                                                     task.status
-                                                                )
-                                                           }
-                                                           className="primary-btn p-2 bg-white"
-                                                           title="On Going"
-                                                      >
-                                                           <FaRunning />
-                                                      </button> */}
                                                        </div>
                                                        {/* <p>{task.deadLine}</p> */}
                                                        <div className="w-full dark-bg rounded-full">
@@ -350,18 +323,6 @@ const AllTask = () => {
                                                                       <IoMdDoneAll />
                                                                  </button>
                                                             )}
-                                                            {/* <button
-                                                      onClick={() =>
-                                                           handleTaskDone(
-                                                                task._id,
-                                                                task.status
-                                                           )
-                                                      }
-                                                      className="primary-btn p-2 bg-white"
-                                                      title="On Going"
-                                                 >
-                                                      <IoMdDoneAll />
-                                                 </button> */}
                                                             <Link
                                                                  state={
                                                                       location?.pathname
@@ -369,11 +330,6 @@ const AllTask = () => {
                                                                  to={`/dashboard/updateTask/${task._id}`}
                                                             >
                                                                  <button
-                                                                      onClick={() =>
-                                                                           handleUpdateTask(
-                                                                                task._id
-                                                                           )
-                                                                      }
                                                                       className="primary-btn p-2 bg-white"
                                                                       title="click for Update make task"
                                                                  >

@@ -5,12 +5,13 @@ import { useContext } from "react";
 import { AuthContext } from "../../../Provider/AuthProvider";
 import axios from "axios";
 import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 // import { useNavigate } from "react-router-dom";
 
 const AddTask = () => {
      const { user } = useContext(AuthContext);
      const { register, handleSubmit, reset } = useForm();
-     // const navigate = useNavigate();
+     const navigate = useNavigate();
      const onSubmit = async (data) => {
           console.log(data);
           const createATask = {
@@ -34,7 +35,7 @@ const AddTask = () => {
                     text: `${data.name} Task added Successfully`,
                     icon: "success",
                });
-               // navigate("/dashboard/allTasks")
+               navigate("/dashboard/allTasks")
           }
           reset();
      };

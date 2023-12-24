@@ -42,7 +42,7 @@ const DeadLineCount = ({deadLine}) => {
         }, [deadLine]);
 
      return (
-          <div className="flex justify-center items-center gap-2 red font-bold py-3 rounded">
+          <div className="flex justify-center items-center gap-2 md:gap-1 lg-gap-2 red font-bold py-3 rounded">
             <div>{timeLeft.days} days</div>
             <div>{timeLeft.hours} hours</div>
             <div>{timeLeft.minutes} min</div>
