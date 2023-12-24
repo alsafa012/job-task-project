@@ -6,11 +6,15 @@ import { AuthContext } from "../../../Provider/AuthProvider";
 import axios from "axios";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
-// import { useNavigate } from "react-router-dom";
 
 const AddTask = () => {
      const { user } = useContext(AuthContext);
-     const { register, handleSubmit, reset } = useForm();
+     const {
+          register,
+          handleSubmit,
+          reset,
+          formState: { errors },
+     } = useForm();
      const navigate = useNavigate();
      const onSubmit = async (data) => {
           console.log(data);
@@ -35,7 +39,7 @@ const AddTask = () => {
                     text: `${data.name} Task added Successfully`,
                     icon: "success",
                });
-               navigate("/dashboard/allTasks")
+               navigate("/dashboard/allTask");
           }
           reset();
      };
@@ -43,10 +47,10 @@ const AddTask = () => {
      return (
           <div>
                <Container>
-                    <WebsiteTitle
-                         title={"Add Task List"}
-                    ></WebsiteTitle>
-                    <h1 className="text-center text-3xl md:text-4xl p-5 font-bold text-white">Add Task Here</h1>
+                    <WebsiteTitle title={"Add Task List"}></WebsiteTitle>
+                    <h1 className="text-center text-3xl md:text-4xl p-5 font-bold text-white">
+                         Add Task Here
+                    </h1>
                     <div className="p-2">
                          <form onSubmit={handleSubmit(onSubmit)}>
                               <div className="space-y-3 font-medium">
@@ -66,12 +70,17 @@ const AddTask = () => {
                                                   placeholder="Task Title"
                                                   className="input input-bordered w-full text-black"
                                              />
+                                             {errors.name && (
+                                                  <span className="mt-2 text-red-500">
+                                                       Task Title is required
+                                                  </span>
+                                             )}
                                         </div>
                                         {/*Priority tags */}
                                         <div className="form-control w-full">
                                              <label className="label">
                                                   <span className="">
-                                                  Priority Type/Tags*
+                                                       Priority Type/Tags*
                                                   </span>
                                              </label>
 
@@ -96,7 +105,7 @@ const AddTask = () => {
                                         <div className="form-control w-full">
                                              <label className="label">
                                                   <span className="">
-                                                  Task deadLine*
+                                                       Task deadLine*
                                                   </span>
                                              </label>
                                              <input
@@ -107,6 +116,11 @@ const AddTask = () => {
                                                   placeholder="Price Money"
                                                   className="input input-bordered w-full text-black"
                                              />
+                                             {errors.date && (
+                                                  <span className="mt-2 text-red-500">
+                                                         Task Deadline is required
+                                                  </span>
+                                             )}
                                         </div>
                                         {/* Task Description*/}
                                         <div className="form-control w-full">
@@ -122,6 +136,11 @@ const AddTask = () => {
                                                   className="textarea textarea-bordered text-black"
                                                   placeholder="Description"
                                              ></textarea>
+                                             {errors.description && (
+                                                  <span className="mt-2 text-red-500">
+                                                       Task Description is required
+                                                  </span>
+                                             )}
                                         </div>
                                    </div>
                               </div>
